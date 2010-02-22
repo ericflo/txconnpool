@@ -31,9 +31,8 @@ Example Implementation
 ----------------------
 
 First we need to create a few classes of boilerplate, to transform a
-MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool.
+MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool:
 
-..sourcecode:: python
 
     from twisted.protocols.memcache import MemCacheProtocol
 
@@ -43,8 +42,6 @@ MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool.
         """
         A MemCacheProtocol that will notify a connectionPool that it is ready
         to accept requests.
-    
-        @ivar factory: A L{MemCacheClientFactory} instance.
         """
         factory = None
     
@@ -60,10 +57,8 @@ MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool.
                 self.factory.deferred.callback(self)
                 self.factory.deferred = None
 
-
     class MemCacheClientFactory(PooledClientFactory):
         protocol = PooledMemCacheProtocol
-
 
     class MemCachePool(Pool):
         clientFactory = MemCacheClientFactory
@@ -83,7 +78,6 @@ MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool.
 
 Now, with this having been created, we can go ahead and use it:
 
-.. sourcecode:: python
 
     from twisted.internet.address import IPv4Address
     

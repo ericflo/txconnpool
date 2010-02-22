@@ -37,8 +37,6 @@ MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool:
         """
         A MemCacheProtocol that will notify a connectionPool that it is ready
         to accept requests.
-    
-        @ivar factory: A L{MemCacheClientFactory} instance.
         """
         factory = None
     
@@ -54,10 +52,8 @@ MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool:
                 self.factory.deferred.callback(self)
                 self.factory.deferred = None
 
-
     class MemCacheClientFactory(PooledClientFactory):
         protocol = PooledMemCacheProtocol
-
 
     class MemCachePool(Pool):
         clientFactory = MemCacheClientFactory
