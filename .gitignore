@@ -4,3 +4,5 @@ src/
 pip-log.txt
 *DS_Store
 *~
+dist/
+txconnpool.egg-info/
