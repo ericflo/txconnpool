@@ -26,8 +26,7 @@ Example Implementation
 ----------------------
 
 First we need to create a few classes of boilerplate, to transform a
-MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool:
-
+MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool::
 
     from twisted.protocols.memcache import MemCacheProtocol
 
@@ -71,8 +70,7 @@ MemCacheProtocol_ into a PooledMemcachedProtocol, and then create a pool:
             return self.performRequest('add', *args, **kwargs)
 
 
-Now, with this having been created, we can go ahead and use it:
-
+Now, with this having been created, we can go ahead and use it::
 
     from twisted.internet.address import IPv4Address
     
