@@ -291,7 +291,7 @@ class Pool(object):
 
             _ign_d = self.performRequest(method, *args, **kwargs)
 
-            _ign_d.addCallback(d.callback)
+            _ign_d.chainDeferred(d)
 
 
     def suggestMaxClients(self, maxClients):
